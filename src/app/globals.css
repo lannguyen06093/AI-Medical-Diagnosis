@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Blue theme - changed from pink */
+  --accent-blue: #0ea5e9;
+  --accent-dark: #0284c7;
+  --text-primary: #111827;
+  --text-secondary: #475569;
+  --input-bg: #ffffff;
+  --card-bg: #ffffff;
+  --border-color: #e0f2fe;
+  --shadow: rgba(14, 165, 233, 0.15);
+}
+
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+.medical-diagnosis-container {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.input-wrapper input:focus,
+.input-wrapper textarea:focus,
+.input-wrapper select:focus {
+  outline: none;
+  border-color: var(--accent-blue) !important;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+}
+
+.generate-button:hover:not(:disabled) {
+  transform: scale(1.02);
+  box-shadow: 0 6px 16px var(--shadow);
+}
+
+.generate-button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.diagnosis-card {
+  animation: slideIn 0.4s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f9ff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-blue);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-dark);
+}
